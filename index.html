@@ -1,0 +1,261 @@
+
+<html> 
+ 
+  <head> 
+    <title>AI calculator</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <style> 
+        #calc{ 
+          height: 620; 
+          width: 325; 
+          background-color:#DAF0F0; 
+          margin: auto; 
+          border-radius: 10px; 
+          padding: 10; 
+          text-align: center; 
+   
+        } 
+        #result{ 
+          height:140; 
+          width:100%; 
+          display: block; 
+          padding: 10px; 
+          border-radius: 10px; 
+          border: 2px solid #666666; 
+          font-size: 1.6em; 
+        } 
+        .btn{ 
+          height: 80; 
+          width: 65; 
+          border-radius: 0px; 
+          font-size: 1em; 
+          margin:5px; 
+          border: 5px black; 
+          float: left; 
+          background-color: #ffffff; 
+           
+        } 
+        #equal{ 
+          width: 150; 
+          background-color: orange; 
+        } 
+       .splash{ 
+         position:fixed; 
+         top:0; 
+         left:0; 
+         height:100vh; 
+         width:100%; 
+         background-color:black; 
+         z-index:200; 
+         color:white; 
+         font-weight:700px; 
+         line-height:90vh; 
+         text-align:center; 
+       } 
+       .splash.none{ 
+         position:fixed; 
+         top:0; 
+         left:0; 
+         height:100vh; 
+         opacity:0; 
+         width:100%; 
+         background-color:black; 
+         z-index:-10; 
+         color:white; 
+         font-weight:700px; 
+         line-height:90vh; 
+         text-align:center; 
+         transition:all 0.5s; 
+       } 
+       @keyframes fadeIn{ 
+         to { 
+       opacity:1; 
+       } 
+       } 
+       .fade{ 
+         opacity:0; 
+         animation:fadeIn 1s ease-in forwards; 
+       } 
+       .start{ 
+         height: 60; 
+          width: 160; 
+          border-radius: 10px; 
+          font-size:20; 
+          border: 5px black; 
+          background-color: #ffffff; 
+          text-align:center; 
+       } 
+       .btn:hover{ 
+    background-color:#56bead; 
+  } 
+  #equal:hover{ 
+    background-color:#56baed; 
+  } 
+    </style> 
+  <script async src="https://drv.tw/inc/wd.js"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7580352552486254" crossorigin="anonymous"></script></head> 
+ 
+  <body> 
+    <div class="splash"> 
+      <h1 class="fade"> 
+        <input type="button" class="start" value="START"> 
+        <br>AI calculator </h1> 
+    </div> 
+    
+    <div id="calc"> 
+      <form> 
+        <text area></text> 
+        <input type="text"   id="result"> 
+        <input type="button" class="btn" id="clear" onclick="funclear()" value="C"> 
+        <input type="button" class="btn" id="mod" onclick="funmod()" value="%"> 
+        <input type="button" class="btn" id="bs" onclick="funbackspace()" value="<-"> 
+        <input type="button" class="btn" id="div" onclick="fundiv()" value="/"> 
+        <input type="button" class="btn" id="seven" onclick="funseven()" value="7"> 
+        <input type="button" class="btn" id="eight" onclick="funeight()" value="8"> 
+        <input type="button" class="btn" id="nine" onclick="funnine()" value="9"> 
+        <input type="button" class="btn" id="plus" onclick="funplus()" value="+"> 
+        <input type="button" class="btn" id="four" onclick="funfour()" value="4"> 
+        <input type="button" class="btn" id="five" onclick="funfive()" value="5"> 
+        <input type="button" class="btn" id="six" onclick="funsix()" value="6"> 
+        <input type="button" class="btn" id="mod" onclick="funminus()" value="-"> 
+        <input type="button" class="btn" id="one" onclick="funone()" value="1"> 
+        <input type="button" class="btn" id="two" onclick="funtwo()" value="2"> 
+        <input type="button" class="btn" id="three" onclick="funthree()" value="3">
+        <input type="button" class="btn" id="mul" onclick="funmul()" value="x"> 
+        <input type="button" class="btn" id="zero" onclick="funzero()" value="0"> 
+        <input type="button" class="btn" id="point" onclick="funpoint()" value="."> 
+        <input type="button" class="btn" id="equal" onclick="funequal()" value="="> 
+      </form> 
+   <div> 
+   <footer> 
+  <center> <marquee scrollamount="7" bgcolor="#F6FF3F">Created and Devoloped by <b>PRAVEEN KUMAR</b></marquee></center> 
+   </footer> 
+   </div> 
+    <script> 
+      const start = document.querySelector(".start"), 
+        splash = document.querySelector(".splash"); 
+      window.onload = () => 
+      { 
+        start.onclick = () => 
+        { 
+          splash.classList.add("none"); 
+        } 
+      } 
+ 
+ 
+      function funclear() 
+      { 
+        document.getElementById('result').value = "" 
+      }; 
+ 
+      function funone() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + 1 
+      }; 
+ 
+      function funtwo() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + 2 
+      }; 
+ 
+      function funthree() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + 3 
+      }; 
+ 
+      function funfour() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + 4 
+      }; 
+ 
+      function funfive() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + 5 
+      }; 
+ 
+      function funsix() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + 6 
+      }; 
+ 
+      function funseven() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + 7 
+      }; 
+ 
+      function funeight() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + 8 
+      }; 
+ 
+      function funnine() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + 9 
+      }; 
+ 
+      function funzero() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + 0 
+      }; 
+ 
+      function funplus() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + "+" 
+      }; 
+ 
+      function funminus() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + "-" 
+      }; 
+ 
+      function funmul() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + "*" 
+      }; 
+ 
+      function fundiv() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + "/" 
+      }; 
+ 
+      function funmod() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + "%" 
+      }; 
+ 
+      function funpoint() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input + "." 
+      }; 
+ 
+      function funbackspace() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = input.slice(0, (input.length) - 
+          1); 
+      }; 
+ 
+      function funequal() 
+      { 
+        var input = document.getElementById('result').value; 
+        document.getElementById('result').value = eval(input) 
+      }; 
+    </script> 
+  </body> 
+ 
+</html>
